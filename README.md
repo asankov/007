@@ -12,7 +12,7 @@ Edit [`src/data/watched.json`](src/data/watched.json). Set a movie’s value to 
 
 Commit and push to `main`. GitHub Actions builds and deploys the site automatically. The build validates every movie’s status and rejects missing, misspelled, or non-boolean entries.
 
-Watched status is read-only on the website and comes exclusively from this file. No browser storage is used. The year distinguishes the two Casino Royale films. This file replaces the previous `dist/watched.json`; `dist/` is now generated build output.
+Watched status is read-only on the website and comes exclusively from this file. No browser storage is used. The year distinguishes the two Casino Royale films.
 
 ## Development
 
