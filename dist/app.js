@@ -1,5 +1,92 @@
 const movies=[
 ['Dr. No',1962,'Sean Connery'],['From Russia with Love',1963,'Sean Connery'],['Goldfinger',1964,'Sean Connery'],['Thunderball',1965,'Sean Connery'],['Casino Royale',1967,'David Niven',true],['You Only Live Twice',1967,'Sean Connery'],['On Her Majesty’s Secret Service',1969,'George Lazenby'],['Diamonds Are Forever',1971,'Sean Connery'],['Live and Let Die',1973,'Roger Moore'],['The Man with the Golden Gun',1974,'Roger Moore'],['The Spy Who Loved Me',1977,'Roger Moore'],['Moonraker',1979,'Roger Moore'],['For Your Eyes Only',1981,'Roger Moore'],['Octopussy',1983,'Roger Moore'],['Never Say Never Again',1983,'Sean Connery',true],['A View to a Kill',1985,'Roger Moore'],['The Living Daylights',1987,'Timothy Dalton'],['Licence to Kill',1989,'Timothy Dalton'],['GoldenEye',1995,'Pierce Brosnan'],['Tomorrow Never Dies',1997,'Pierce Brosnan'],['The World Is Not Enough',1999,'Pierce Brosnan'],['Die Another Day',2002,'Pierce Brosnan'],['Casino Royale',2006,'Daniel Craig'],['Quantum of Solace',2008,'Daniel Craig'],['Skyfall',2012,'Daniel Craig'],['Spectre',2015,'Daniel Craig'],['No Time to Die',2021,'Daniel Craig']];
-const key='double-o-date-night-v1';let state={names:['You','Your wife'],seen:{}};try{const data=JSON.parse(localStorage.getItem(key));if(data&&Array.isArray(data.names)&&data.names.length===2&&data.names.every(n=>typeof n==='string')&&data.seen&&typeof data.seen==='object')state=data}catch{}let filter='all';const $=s=>document.querySelector(s);const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const id=i=>movies[i][1]+'-'+movies[i][0];const watched=(i,a)=>!!state.seen[id(i)]?.[a];let timer;function toast(message){$('#toast').textContent=message;$('#toast').classList.add('show');clearTimeout(timer);timer=setTimeout(()=>$('#toast').classList.remove('show'),2600)}function save(){try{localStorage.setItem(key,JSON.stringify(state))}catch{toast('Browser storage is unavailable. Changes may not persist.')}}
-function render(){const counts=[0,0];let both=0;movies.forEach((m,i)=>{counts.forEach((_,a)=>{if(watched(i,a))counts[a]++});if(watched(i,0)&&watched(i,1))both++});counts.forEach((c,a)=>{$('#count'+a).textContent=c;$('#agent'+a).textContent=state.names[a].toUpperCase()});$('#bothCount').textContent=both;$('#progress').style.width=(both/27*100)+'%';$('#status').textContent=both===27?'Mission accomplished.':both===0?'Just getting started.':`${27-both} missions remaining.`;const query=$('#search').value.toLowerCase(),actor=$('#actor').value;const tones=['#704b27','#254945','#88651d','#354e70','#653345','#7b362f'];$('#grid').innerHTML=movies.map((m,i)=>{const together=watched(i,0)&&watched(i,1);if((filter==='both'&&!together)||(filter==='unseen'&&together)||(actor&&m[2]!==actor)||!`${m[0]} ${m[1]} ${m[2]}`.toLowerCase().includes(query))return '';return `<article class="film"><div class="poster" style="--tone:${tones[i%tones.length]}"><span class="poster-year">${m[1]}</span>${together?'<span class="badge">✓ BOTH SEEN</span>':m[3]?'<span class="badge">INDEPENDENT</span>':''}<div class="poster-title">${escape(m[0])}</div><small>JAMES BOND · 007</small></div><div class="film-info"><div class="metadata">${m[1]} · ${m[2]}</div><h3>${escape(m[0])}</h3><div class="watchers">${state.names.map((name,a)=>`<button data-movie="${i}" data-agent="${a}" aria-pressed="${watched(i,a)}" aria-label="${escape(name)} watched ${escape(m[0])} (${m[1]})">${watched(i,a)?'✓':'＋'} ${escape(name)}</button>`).join('')}</div></div></article>`}).join('');$('#empty').hidden=!!$('#grid').children.length}
-$('#grid').addEventListener('click',e=>{const b=e.target.closest('[data-movie]');if(!b)return;const i=+b.dataset.movie,a=+b.dataset.agent;const values=[watched(i,0),watched(i,1)];values[a]=!values[a];state.seen[id(i)]=values;save();render()});document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(t=>t.classList.toggle('active',t===b));render()});$('#search').addEventListener('input',render);$('#actor').addEventListener('change',render);const dialog=$('#dialog');$('#close').onclick=()=>dialog.close();dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});$('#agents').onclick=()=>{$('#dialogContent').innerHTML=`<p class="eyebrow">YOUR DOUBLE-O TEAM</p><h2>Meet the agents.</h2><form id="nameForm">${state.names.map((n,a)=>`<label>Agent 0${a+1}<input name="agent${a}" maxlength="24" value="${escape(n)}" required></label>`).join('')}<button class="primary">Save agent names</button></form>`;$('#nameForm').onsubmit=e=>{e.preventDefault();const data=new FormData(e.target);state.names=[0,1].map(a=>String(data.get('agent'+a)).trim()||`Agent 0${a+1}`);save();render();dialog.close()};dialog.showModal()};$('#pick').onclick=()=>{const pool=movies.map((m,i)=>i).filter(i=>!watched(i,0)||!watched(i,1));if(!pool.length){toast('Mission accomplished! Every film watched by both agents.');return}const i=pool[Math.floor(Math.random()*pool.length)],m=movies[i];$('#dialogContent').innerHTML=`<p class="eyebrow">TONIGHT’S ASSIGNMENT</p><h2>${escape(m[0])}</h2><p class="metadata">${m[1]} · ${m[2]}${m[3]?' · Independent release':''}</p><p>Settle in. Your next mission is ready.</p><button class="primary" id="complete">Mark watched by both</button>`;$('#complete').onclick=()=>{state.seen[id(i)]=[true,true];save();render();dialog.close();toast('Joint mission completed.')};dialog.showModal()};window.addEventListener('storage',e=>{if(e.key===key){try{const data=JSON.parse(e.newValue);if(data&&Array.isArray(data.names)&&data.names.length===2&&data.names.every(n=>typeof n==='string')&&data.seen&&typeof data.seen==='object'){state=data;render()}}catch{}}});render();
+
+const key = 'double-o-date-night-v2';
+const legacyKey = 'double-o-date-night-v1';
+function normalize(data) {
+  if (!data || !data.seen || typeof data.seen !== 'object' || Array.isArray(data.seen)) return null;
+  return {seen: Object.fromEntries(Object.entries(data.seen).map(([id, value]) => [id, Array.isArray(value) ? value.some(v => v === true) : value === true]))};
+}
+function loadState() {
+  try {
+    const current = normalize(JSON.parse(localStorage.getItem(key)));
+    if (current) return current;
+    const previous = normalize(JSON.parse(localStorage.getItem(legacyKey)));
+    if (previous) return previous;
+  } catch {}
+  return {seen: {}};
+}
+let state = loadState();
+let filter = 'all';
+const $ = s => document.querySelector(s);
+const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const id = i => movies[i][1] + '-' + movies[i][0];
+const watched = i => state.seen[id(i)] === true;
+const actors = ['Sean Connery','George Lazenby','Roger Moore','Timothy Dalton','Pierce Brosnan','Daniel Craig','David Niven'];
+let timer;
+function toast(message) {
+  $('#toast').textContent = message;
+  $('#toast').classList.add('show');
+  clearTimeout(timer);
+  timer = setTimeout(() => $('#toast').classList.remove('show'), 2600);
+}
+function save() {
+  try { localStorage.setItem(key, JSON.stringify(state)); }
+  catch { toast('Browser storage is unavailable. Changes may not persist.'); }
+}
+function render() {
+  const count = movies.filter((m,i) => watched(i)).length;
+  $('#watchedCount').textContent = count;
+  $('#remainingCount').textContent = movies.length - count;
+  $('#progress').style.width = (count / movies.length * 100) + '%';
+  $('#status').textContent = count === movies.length ? 'Mission accomplished.' : count === 0 ? 'Just getting started.' : `${movies.length-count} missions remaining.`;
+  const query = $('#search').value.toLowerCase(), actor = $('#actor').value;
+  const tones = ['#704b27','#254945','#88651d','#354e70','#653345','#7b362f'];
+  let visibleCount = 0;
+  $('#grid').innerHTML = actors.map((name, groupIndex) => {
+    const all = movies.map((m,i) => ({m,i})).filter(({m}) => m[2] === name);
+    const visible = all.filter(({m,i}) => !(filter === 'watched' && !watched(i)) && !(filter === 'unseen' && watched(i)) && (!actor || m[2] === actor) && `${m[0]} ${m[1]} ${m[2]}`.toLowerCase().includes(query));
+    if (!visible.length) return '';
+    visibleCount += visible.length;
+    const years = all.map(({m}) => m[1]);
+    const done = all.filter(({i}) => watched(i)).length;
+    return `<section class="actor-group" aria-labelledby="actor-${groupIndex}"><div class="actor-heading"><div><p class="eyebrow">${name === 'David Niven' ? 'INDEPENDENT BOND' : 'THE BOND DOSSIER'} · ${Math.min(...years)}${Math.min(...years) === Math.max(...years) ? '' : '–'+Math.max(...years)}</p><h3 id="actor-${groupIndex}">${escape(name)}</h3></div><span>${done} / ${all.length} watched</span></div><div class="film-grid">${visible.map(({m,i}) => `<article class="film"><div class="poster" style="--tone:${tones[groupIndex%tones.length]}"><span class="poster-year">${m[1]}</span>${watched(i)?'<span class="badge">✓ WATCHED</span>':''}${m[3]?'<span class="independent-label">INDEPENDENT RELEASE</span>':''}<div class="poster-title">${escape(m[0])}</div><small>JAMES BOND · 007</small></div><div class="film-info"><div class="metadata">${m[1]} · ${m[2]}</div><h4>${escape(m[0])}</h4><div class="watchers"><button data-movie="${i}" aria-pressed="${watched(i)}" aria-label="Watched ${escape(m[0])} (${m[1]})">${watched(i)?'✓ Watched':'＋ Mark watched'}</button></div></div></article>`).join('')}</div></section>`;
+  }).join('');
+  $('#empty').hidden = visibleCount !== 0;
+}
+$('#grid').addEventListener('click', e => {
+  const button = e.target.closest('[data-movie]');
+  if (!button) return;
+  const i = +button.dataset.movie;
+  state.seen[id(i)] = !watched(i);
+  save();
+  render();
+  // Rendering replaces the button; restore focus for keyboard users.
+  $(`[data-movie="${i}"]`)?.focus({preventScroll:true});
+});
+document.querySelectorAll('[data-filter]').forEach(button => button.onclick = () => {
+  filter = button.dataset.filter;
+  document.querySelectorAll('[data-filter]').forEach(t => {t.classList.toggle('active', t === button);t.setAttribute('aria-pressed', String(t === button));});
+  render();
+});
+$('#search').addEventListener('input', render);
+$('#actor').addEventListener('change', render);
+const dialog = $('#dialog');
+$('#close').onclick = () => dialog.close();
+dialog.addEventListener('click', e => {
+  if (e.target !== dialog) return;
+  const r = dialog.getBoundingClientRect();
+  if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close();
+});
+$('#pick').onclick = () => {
+  const pool = movies.map((m,i) => i).filter(i => !watched(i));
+  if (!pool.length) { toast('Mission accomplished! Every film watched.'); return; }
+  const i = pool[Math.floor(Math.random()*pool.length)], m = movies[i];
+  $('#dialogContent').innerHTML = `<p class="eyebrow">TONIGHT’S ASSIGNMENT</p><h2>${escape(m[0])}</h2><p class="metadata">${m[1]} · ${m[2]}${m[3]?' · Independent release':''}</p><p>Settle in. Your next mission is ready.</p><button class="primary" id="complete">Mark watched</button>`;
+  $('#complete').onclick = () => {state.seen[id(i)] = true;save();render();dialog.close();toast('Mission completed.');};
+  dialog.showModal();
+};
+window.addEventListener('storage', e => {
+  if (e.key === key || e.key === null) {state = loadState();render();}
+});
+render();
