@@ -22,7 +22,7 @@ const $ = s => document.querySelector(s);
 const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const id = i => movies[i][1] + '-' + movies[i][0];
 const watched = i => state.seen[id(i)] === true;
-const actors = ['Sean Connery','George Lazenby','Roger Moore','Timothy Dalton','Pierce Brosnan','Daniel Craig','David Niven'];
+const actors = ['David Niven','Sean Connery','George Lazenby','Roger Moore','Timothy Dalton','Pierce Brosnan','Daniel Craig'];
 let timer;
 function toast(message) {
   $('#toast').textContent = message;
