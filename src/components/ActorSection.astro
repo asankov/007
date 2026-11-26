@@ -1,0 +1,31 @@
+---
+import MovieCard from './MovieCard.astro';
+import type { actorGroups } from '../data/catalog';
+interface Props {
+  group: (typeof actorGroups)[number];
+}
+const { group } = Astro.props;
+const headingId = `actor-${group.actor.toLowerCase().replaceAll(' ', '-')}`;
+---
+
+<section class="actor-group" aria-labelledby={headingId}>
+  <div class="actor-heading">
+    <div>
+      <p class="eyebrow">
+        {group.actor === 'David Niven'
+          ? 'INDEPENDENT BOND'
+          : 'THE BOND DOSSIER'}{' '}
+        · {group.years}
+      </p>
+      <h3 id={headingId}>{group.actor}</h3>
+    </div>
+    <span>
+      {group.watchedCount} / {group.films.length} watched
+    </span>
+  </div>
+  <div class="film-grid">
+    {group.films.map((movie) => (
+      <MovieCard movie={movie} tone={group.tone} />
+    ))}
+  </div>
+</section>

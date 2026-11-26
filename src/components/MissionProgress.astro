@@ -1,0 +1,34 @@
+---
+import { movies, watchedCount } from '../data/catalog';
+const remaining = movies.length - watchedCount;
+const status =
+  remaining === 0
+    ? 'Mission accomplished.'
+    : watchedCount === 0
+      ? 'Just getting started.'
+      : `${remaining} missions remaining.`;
+---
+
+<section class="stats" aria-label="Mission progress">
+  <div>
+    <span class="stat-label">MISSIONS COMPLETED</span>
+    <p>
+      <b>{watchedCount}</b>
+      <span> / {movies.length} films watched</span>
+    </p>
+    <div class="progress">
+      <i style={`width:${(watchedCount / movies.length) * 100}%`}></i>
+    </div>
+  </div>
+  <div>
+    <span class="stat-label">STILL TO WATCH</span>
+    <p>
+      <b>{remaining}</b>
+      <span> films remaining</span>
+    </p>
+  </div>
+  <div>
+    <span class="stat-label">MISSION STATUS</span>
+    <p class="status">{status}</p>
+  </div>
+</section>

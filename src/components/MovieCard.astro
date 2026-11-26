@@ -1,0 +1,39 @@
+---
+import type { Movie } from '../data/catalog';
+interface Props {
+  movie: Movie;
+  tone: string;
+}
+const { movie, tone } = Astro.props;
+---
+
+<article
+  class="film"
+  data-movie
+  data-title={movie.title}
+  data-year={movie.year}
+  data-actor={movie.actor}
+  data-watched={String(movie.watched)}
+  data-independent={String(movie.independent)}
+>
+  <div class="poster" style={`--tone:${tone}`}>
+    <span class="poster-year">{movie.year}</span>
+    {movie.watched && <span class="badge">✓ WATCHED</span>}
+    {movie.independent && (
+      <span class="independent-label">INDEPENDENT RELEASE</span>
+    )}
+    <div class="poster-title">{movie.title}</div>
+    <small>JAMES BOND · 007</small>
+  </div>
+  <div class="film-info">
+    <div class="metadata">
+      {movie.year} · {movie.actor}
+    </div>
+    <h4>{movie.title}</h4>
+    <div class="watchers">
+      <span class:list={['watch-status', { 'is-watched': movie.watched }]}>
+        {movie.watched ? '✓ Watched' : 'Not watched'}
+      </span>
+    </div>
+  </div>
+</article>

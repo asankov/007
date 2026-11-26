@@ -1,25 +1,46 @@
 # Double O — Date Night
 
-A static James Bond watchlist, published at https://asankov.dev/007/.
+An Astro static site at https://asankov.dev/007/.
 
 ## Update watched movies
 
-Edit [`dist/watched.json`](dist/watched.json) and change a movie’s value to `true` (watched) or `false` (not watched):
+Edit [`src/data/watched.json`](src/data/watched.json). Set a movie’s value to `true` for watched or `false` for not watched, keeping the existing keys:
 
 ```json
 "1962-Dr. No": true
 ```
 
-Keep the movie keys unchanged. The year distinguishes the two Casino Royale films. Commit and push to `main`; GitHub Actions publishes `dist/` to Pages automatically. Reload the site after deployment to see the updated status.
+Commit and push to `main`. GitHub Actions builds and deploys the site automatically. The build validates every movie’s status and rejects missing, misspelled, or non-boolean entries.
 
-This file is the only source of watched status. Browser local storage is no longer used. Existing browser-only progress is not uploaded; enter your watched movies in the JSON file. All entries initially default to `false` because browser history is not available in the repository.
+Watched status is read-only on the website and comes exclusively from this file. No browser storage is used. The year distinguishes the two Casino Royale films. This file replaces the previous `dist/watched.json`; `dist/` is now generated build output.
 
-Movie statuses are read-only on the website. Search, actor/status filters, progress counts, and the random unwatched-movie picker use the JSON data.
+## Development
 
-## Local preview
+Use Node.js 24 or newer.
 
 ```sh
-python3 -m http.server 4173 --directory dist
+npm ci
+npm run dev
 ```
 
-Open http://localhost:4173 (use a web server rather than opening the HTML file directly, so the JSON file can load).
+Open the local URL printed by Astro, including `/007/`.
+
+```sh
+npm run check
+npm test
+npm run build
+npm run preview
+npm run format
+```
+
+## Source structure
+
+- `src/pages/index.astro` assembles the page.
+- `src/layouts/` contains the document shell.
+- `src/components/` contains the hero, progress, actor sections, film cards, and picker dialog.
+- `src/data/movies.json` contains the catalog; `watched.json` holds the manually edited statuses.
+- `src/data/catalog.ts` validates and groups data at build time.
+- `src/scripts/watchlist.ts` handles filters and random picks by updating existing elements.
+- `src/styles/global.css` preserves the black-and-red design.
+
+All movie cards and progress counts are rendered as HTML at build time. Only filters and the picker need browser JavaScript. The existing GitHub Pages workflow publishes from `main`; no deployment branch is used.

@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import MissionProgress from '../components/MissionProgress.astro';
+import ActorSection from '../components/ActorSection.astro';
+import MissionPicker from '../components/MissionPicker.astro';
+import { actors, actorGroups } from '../data/catalog';
+---
+
+<Layout>
+  <Hero />
+  <MissionProgress />
+  <section class="collection">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">THE COMPLETE DOSSIER</p>
+        <h2>Every Bond. Every mission.</h2>
+      </div>
+      <span>25 EON + 2 independent films</span>
+    </div>
+    <div class="toolbar">
+      <div class="tabs" role="group" aria-label="Watch status">
+        <button class="active" data-filter="all" aria-pressed="true">
+          All films
+        </button>
+        <button data-filter="unseen" aria-pressed="false">
+          Still to watch
+        </button>
+        <button data-filter="watched" aria-pressed="false">
+          Watched
+        </button>
+      </div>
+      <div class="searches">
+        <input
+          id="search"
+          aria-label="Search movies"
+          placeholder="Search the dossier…"
+        />
+        <select id="actor" aria-label="Filter by Bond actor">
+          <option value="">Every Bond</option>
+          {actors.map((actor) => (
+            <option>{actor}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+    <div id="grid">
+      {actorGroups.map((group) => (
+        <ActorSection group={group} />
+      ))}
+    </div>
+    <p id="empty" hidden>
+      No films match this dossier. Try another search or filter.
+    </p>
+  </section>
+  <MissionPicker />
+</Layout>
+<script>
+  import '../scripts/watchlist';
+</script>

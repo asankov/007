@@ -1,0 +1,23 @@
+{
+  "name": "bond-night",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check && tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "astro": "^7.4.13"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "prettier": "^3.10.1",
+    "prettier-plugin-astro": "^1.1.2",
+    "typescript": "^6.0.3"
+  }
+}
