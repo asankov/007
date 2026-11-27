@@ -1,5 +1,13 @@
 ---
 import '../styles/global.css';
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Double O — Bond Night',
+  description = 'Your James Bond movie mission. Track every film, one date night at a time.',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -7,11 +15,8 @@ import '../styles/global.css';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta
-      name="description"
-      content="Your James Bond movie mission. Track every film, one date night at a time."
-    />
-    <title>Double O — Bond Night</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
   </head>
   <body>
     <header>

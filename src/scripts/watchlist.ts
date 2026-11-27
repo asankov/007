@@ -1,3 +1,5 @@
+export {};
+
 const search = document.querySelector<HTMLInputElement>('#search')!;
 const actor = document.querySelector<HTMLSelectElement>('#actor')!;
 const filterButtons = [

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionTabs from '../components/SectionTabs.astro';
 import Hero from '../components/Hero.astro';
 import MissionProgress from '../components/MissionProgress.astro';
 import ActorSection from '../components/ActorSection.astro';
@@ -8,6 +9,7 @@ import { actors, actorGroups } from '../data/catalog';
 ---
 
 <Layout>
+  <SectionTabs active="movies" />
   <Hero />
   <MissionProgress />
   <section class="collection">

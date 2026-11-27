@@ -1,0 +1,152 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionTabs from '../components/SectionTabs.astro';
+import GameCard from '../components/GameCard.astro';
+import { games, platforms, gameGroups } from '../data/game-catalog';
+---
+
+<Layout
+  title="Games — Double O"
+  description="Explore James Bond video games, from early computer adventures to modern missions, with platforms for every release."
+>
+  <SectionTabs active="games" />
+  <section class="games-hero">
+    <div>
+      <p class="eyebrow">Q BRANCH / INTERACTIVE OPERATIONS</p>
+      <h1>
+        License
+        <br />
+        to <em>play.</em>
+      </h1>
+      <p class="description">
+        From the Spectrum to the latest consoles. Your dossier on Bond’s
+        adventures beyond the big screen.
+      </p>
+    </div>
+    <div class="game-emblem" aria-hidden="true">
+      <span>007</span>
+      <div>
+        PLAYER ONE
+        <br />
+        READY FOR DUTY
+      </div>
+    </div>
+  </section>
+  <section class="stats games-stats" aria-label="Game catalogue summary">
+    <div>
+      <span class="stat-label">THE ARCHIVE</span>
+      <p>
+        <b>{games.length}</b>
+        <span> games & editions</span>
+      </p>
+    </div>
+    <div>
+      <span class="stat-label">OPERATING SYSTEMS</span>
+      <p>
+        <b>{platforms.length}</b>
+        <span> platforms</span>
+      </p>
+    </div>
+    <div>
+      <span class="stat-label">OVER FOUR DECADES OF BOND</span>
+      <p class="status">1982–2026</p>
+    </div>
+  </section>
+  <section class="collection games-collection" aria-labelledby="games-title">
+    <div class="section-title">
+      <div>
+        <p class="eyebrow">THE INTERACTIVE DOSSIER</p>
+        <h2 id="games-title">Every era. A new way to play.</h2>
+      </div>
+      <span id="game-count" aria-live="polite">
+        {games.length} entries
+      </span>
+    </div>
+    <div class="toolbar games-toolbar">
+      <p>In release order</p>
+      <div class="searches">
+        <input
+          id="game-search"
+          type="search"
+          placeholder="Search games…"
+          aria-label="Search games"
+        />
+        <select id="game-platform" aria-label="Filter games by platform">
+          <option value="">All platforms</option>
+          {platforms.map((platform) => (
+            <option>{platform}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+    <p class="catalogue-note">
+      Computer, console, handheld and mobile games, with distinct adaptations
+      and major reissues listed separately. Includes Bond Jr., Young Bond and
+      the Action Pack’s original light-gun games. Platforms describe historical
+      releases, not current store availability.
+    </p>
+    <div id="games-grid">
+      {gameGroups.map((group) => (
+        <section class="game-group" aria-labelledby={`decade-${group.decade}`}>
+          <div class="actor-heading">
+            <div>
+              <p class="eyebrow">INTERACTIVE OPERATIONS</p>
+              <h3 id={`decade-${group.decade}`}>{group.decade}s</h3>
+            </div>
+            <span>{group.games.length} entries</span>
+          </div>
+          <div class="game-grid">
+            {group.games.map((game) => (
+              <GameCard game={game} />
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+    <p id="games-empty" class="catalogue-empty" hidden>
+      No games match this search. Try another title or platform.
+    </p>
+    <details class="catalogue-sources">
+      <summary>About this catalogue & sources</summary>
+      <p>
+        Researched 27 November 2026. Release years refer to the first release of
+        the listed edition. Ordinary ports share an entry; substantially
+        different adaptations have separate entries. The Action Pack is included
+        because it introduced original light-gun games. Other compilation-only
+        bundles, cancelled projects, fan remakes, dedicated LCD toys, pinball
+        tables and crossover DLC are excluded.
+      </p>
+      <p>
+        Some early release dates differ between archives; notes flag known
+        discrepancies. New platform announcements are marked upcoming rather
+        than listed as playable.
+      </p>
+      <ul>
+        <li>
+          <a href="https://www.mi6-hq.com/sections/games/">
+            MI6-HQ game archive
+          </a>
+        </li>
+        <li>
+          <a href="https://collected.games/catalog/series/james-bond/">
+            Collected Games / IGDB release catalogue
+          </a>
+        </li>
+        <li>
+          <a href="https://jamesbondstudies.ac.uk/articles/111/files/660d372911c05.pdf">
+            Becoming Bond — Journal of James Bond Studies
+          </a>
+        </li>
+        <li>
+          <a href="https://ioi.dk/007firstlightgame">
+            IO Interactive — 007 First Light
+          </a>
+        </li>
+      </ul>
+      <p>Each game includes a link to its supporting source.</p>
+    </details>
+  </section>
+</Layout>
+<script>
+  import '../scripts/games';
+</script>

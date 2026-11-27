@@ -1,0 +1,41 @@
+---
+import type { Game } from '../data/game-catalog';
+interface Props {
+  game: Game;
+}
+const { game } = Astro.props;
+---
+
+<article
+  class="game-card"
+  data-game
+  data-search={`${game.title} ${game.year} ${game.version} ${game.platforms.join(' ')}`.toLowerCase()}
+  data-platforms={JSON.stringify(game.platforms)}
+>
+  <div class="game-card-top">
+    <span class="game-year">{game.year}</span>
+    <span class="game-edition">{game.version}</span>
+  </div>
+  <h3>{game.title}</h3>
+  <p class="platform-label">PLATFORMS</p>
+  <ul class="platform-chips" aria-label="Platforms">
+    {game.platforms.map((platform) => (
+      <li>{platform}</li>
+    ))}
+  </ul>
+  {game.upcomingPlatforms.map((platform) => (
+    <p class="upcoming-platform">
+      {platform.name} <span>· Upcoming · {platform.date}</span>
+    </p>
+  ))}
+  {game.note && <p class="game-note">{game.note}</p>}
+  <a
+    class="game-source"
+    href={game.source}
+    target="_blank"
+    rel="noreferrer"
+    aria-label={`Source for ${game.title}, ${game.version}`}
+  >
+    View source
+  </a>
+</article>

@@ -44,3 +44,9 @@ npm run format
 - `src/styles/global.css` preserves the black-and-red design.
 
 All movie cards and progress counts are rendered as HTML at build time. Only filters and the picker need browser JavaScript. The existing GitHub Pages workflow publishes from `main`; no deployment branch is used.
+
+## Games catalogue
+
+The Games tab lives at `/007/games/`. Edit `src/data/games.json` to update titles, platform lists, edition notes, or source links. Distinct platform adaptations are listed separately. Upcoming platforms stay in `upcomingPlatforms`, separate from released platforms.
+
+The catalogue includes computer, console, handheld, mobile and spin-off games, major reissues, and the Action Pack's original light-gun games. It excludes other compilation-only bundles, cancelled projects, fan remakes, dedicated LCD toys, pinball tables and crossover DLC. The catalogue's source notes and each entry's reference link explain the research.

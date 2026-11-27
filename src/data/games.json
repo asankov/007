@@ -1,0 +1,584 @@
+[
+  {
+    "id": "shaken",
+    "title": "Shaken but Not Stirred",
+    "year": 1982,
+    "platforms": ["ZX Spectrum"],
+    "version": "Text adventure",
+    "note": "An early, unofficial Bond adventure.",
+    "source": "https://en.wikipedia.org/wiki/Shaken_but_Not_Stirred",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "parker",
+    "title": "James Bond 007",
+    "year": 1984,
+    "platforms": [
+      "Atari 2600",
+      "Atari 5200",
+      "Atari 8-bit",
+      "ColecoVision",
+      "Commodore 64",
+      "Sega SG-1000"
+    ],
+    "version": "Parker Brothers",
+    "note": "Often catalogued as 1983; surviving release records place the commercial release in 1984.",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007_(1984_video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "view-action",
+    "title": "A View to a Kill: The Computer Game",
+    "year": 1985,
+    "platforms": ["Amstrad CPC", "Commodore 64", "MSX", "Oric", "ZX Spectrum"],
+    "version": "Action version",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/A_View_to_a_Kill_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "view-text",
+    "title": "James Bond 007: A View to a Kill",
+    "year": 1985,
+    "platforms": ["Apple II", "MS-DOS", "Macintosh"],
+    "version": "Text adventure",
+    "note": "A separate game from Domark’s action adaptation.",
+    "source": "https://en.wikipedia.org/wiki/A_View_to_a_Kill_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "goldfinger",
+    "title": "James Bond 007: Goldfinger",
+    "year": 1986,
+    "platforms": ["Apple II", "MS-DOS", "Macintosh"],
+    "version": "Text adventure",
+    "note": "",
+    "source": "https://collected.games/catalog/series/james-bond/",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "daylights",
+    "title": "The Living Daylights",
+    "year": 1987,
+    "platforms": [
+      "Amstrad CPC",
+      "Amstrad PCW",
+      "Atari 8-bit",
+      "BBC Micro",
+      "Commodore 64",
+      "MSX",
+      "ZX Spectrum"
+    ],
+    "version": "Computer game",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/The_Living_Daylights_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "live-die",
+    "title": "Live and Let Die",
+    "year": 1988,
+    "platforms": [
+      "Amiga",
+      "Amstrad CPC",
+      "Atari ST",
+      "Commodore 64",
+      "MS-DOS",
+      "ZX Spectrum"
+    ],
+    "version": "Boat racing",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/Live_and_Let_Die_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "licence",
+    "title": "Licence to Kill",
+    "year": 1989,
+    "platforms": [
+      "Amiga",
+      "Amstrad CPC",
+      "Atari ST",
+      "BBC Micro",
+      "Commodore 64",
+      "MS-DOS",
+      "MSX",
+      "ZX Spectrum"
+    ],
+    "version": "Computer game",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/Licence_to_Kill_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "action-pack",
+    "title": "James Bond 007 Action Pack",
+    "year": 1990,
+    "platforms": ["ZX Spectrum"],
+    "version": "Light-gun bundle",
+    "note": "Includes Q’s Armoury, Q’s Shooting Range and Mission Zero, a reworked version of The Living Daylights. Bundled with the Spectrum +2 and Magnum Light Phaser.",
+    "source": "https://worldofspectrum.org/archive/software/compilations/james-bond-007-action-pack-amstrad",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "spy",
+    "title": "The Spy Who Loved Me",
+    "year": 1990,
+    "platforms": [
+      "Amiga",
+      "Amstrad CPC",
+      "Atari ST",
+      "Commodore 64",
+      "MS-DOS",
+      "ZX Spectrum"
+    ],
+    "version": "Computer game",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/The_Spy_Who_Loved_Me_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "stealth",
+    "title": "James Bond 007: The Stealth Affair",
+    "year": 1990,
+    "platforms": ["Amiga", "Atari ST", "MS-DOS"],
+    "version": "Adventure",
+    "note": "The North American Bond-branded version of Operation Stealth.",
+    "source": "https://en.wikipedia.org/wiki/Operation_Stealth",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "jr-nes",
+    "title": "James Bond Jr.",
+    "year": 1991,
+    "platforms": ["Nintendo Entertainment System"],
+    "version": "NES adaptation",
+    "note": "A Bond Jr. spin-off; the SNES game is a separate adaptation.",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_Jr._(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "jr-snes",
+    "title": "James Bond Jr.",
+    "year": 1992,
+    "platforms": ["Super Nintendo Entertainment System"],
+    "version": "SNES adaptation",
+    "note": "Different gameplay from the NES release.",
+    "source": "https://www.mi6-hq.com/sections/games/jbj",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "duel",
+    "title": "James Bond 007: The Duel",
+    "year": 1993,
+    "platforms": [
+      "Sega Mega Drive / Genesis",
+      "Sega Master System",
+      "Sega Game Gear"
+    ],
+    "version": "Sega releases",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007:_The_Duel",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "goldeneye",
+    "title": "GoldenEye 007",
+    "year": 1997,
+    "platforms": ["Nintendo 64"],
+    "version": "Original release",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/GoldenEye_007",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "gameboy",
+    "title": "James Bond 007",
+    "year": 1998,
+    "platforms": ["Game Boy"],
+    "version": "Handheld adventure",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007_(1998_video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "tomorrow",
+    "title": "Tomorrow Never Dies",
+    "year": 1999,
+    "platforms": ["PlayStation"],
+    "version": "Console release",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/Tomorrow_Never_Dies_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "world-n64",
+    "title": "The World Is Not Enough",
+    "year": 2000,
+    "platforms": ["Nintendo 64"],
+    "version": "Nintendo 64 adaptation",
+    "note": "A separate game from the PlayStation and Game Boy Color versions.",
+    "source": "https://en.wikipedia.org/wiki/The_World_Is_Not_Enough_(Nintendo_64_video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "world-ps",
+    "title": "The World Is Not Enough",
+    "year": 2000,
+    "platforms": ["PlayStation"],
+    "version": "PlayStation adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/The_World_Is_Not_Enough_(PlayStation_video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "racing",
+    "title": "007 Racing",
+    "year": 2000,
+    "platforms": ["PlayStation"],
+    "version": "Combat driving",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/007_Racing",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "world-gbc",
+    "title": "The World Is Not Enough",
+    "year": 2001,
+    "platforms": ["Game Boy Color"],
+    "version": "Game Boy Color adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/The_World_Is_Not_Enough_(Game_Boy_Color_video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "agent",
+    "title": "James Bond 007: Agent Under Fire",
+    "year": 2001,
+    "platforms": ["PlayStation 2", "Nintendo GameCube", "Xbox"],
+    "version": "Console releases",
+    "note": "GameCube and Xbox ports followed in 2002.",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007:_Agent_Under_Fire",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "ice",
+    "title": "007 Ice Racer",
+    "year": 2002,
+    "platforms": ["Mobile phones (ExEn)"],
+    "version": "Mobile game",
+    "note": "Historical handset release.",
+    "source": "https://jamesbond.fandom.com/wiki/007_Ice_Racer",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "nightfire-console",
+    "title": "James Bond 007: Nightfire",
+    "year": 2002,
+    "platforms": ["PlayStation 2", "Nintendo GameCube", "Xbox"],
+    "version": "Console adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007:_Nightfire",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "nightfire-pc",
+    "title": "James Bond 007: Nightfire",
+    "year": 2002,
+    "platforms": ["Windows", "Macintosh"],
+    "version": "Computer adaptation",
+    "note": "A different campaign from the console game; Mac release followed later.",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007:_Nightfire",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "hover",
+    "title": "007 Hover Chase",
+    "year": 2003,
+    "platforms": ["Mobile phones (Java ME)"],
+    "version": "Mobile game",
+    "note": "Historical handset release.",
+    "source": "https://www.gamespot.com/articles/a-brief-history-of-james-bond-video-games/1100-6503474/",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "nightfire-gba",
+    "title": "James Bond 007: Nightfire",
+    "year": 2003,
+    "platforms": ["Game Boy Advance"],
+    "version": "Game Boy Advance adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007:_Nightfire",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "everything-gba",
+    "title": "James Bond 007: Everything or Nothing",
+    "year": 2003,
+    "platforms": ["Game Boy Advance"],
+    "version": "Game Boy Advance adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007:_Everything_or_Nothing_(Game_Boy_Advance_video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "everything-console",
+    "title": "James Bond 007: Everything or Nothing",
+    "year": 2004,
+    "platforms": ["PlayStation 2", "Nintendo GameCube", "Xbox"],
+    "version": "Console adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007:_Everything_or_Nothing",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "rogue-console",
+    "title": "GoldenEye: Rogue Agent",
+    "year": 2004,
+    "platforms": ["PlayStation 2", "Nintendo GameCube", "Xbox"],
+    "version": "Console adaptation",
+    "note": "Bond-universe spin-off; not a sequel to GoldenEye 007.",
+    "source": "https://en.wikipedia.org/wiki/GoldenEye:_Rogue_Agent",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "rogue-ds",
+    "title": "GoldenEye: Rogue Agent",
+    "year": 2005,
+    "platforms": ["Nintendo DS"],
+    "version": "Nintendo DS adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/GoldenEye:_Rogue_Agent",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "russia",
+    "title": "From Russia with Love",
+    "year": 2005,
+    "platforms": [
+      "PlayStation 2",
+      "Nintendo GameCube",
+      "Xbox",
+      "PlayStation Portable"
+    ],
+    "version": "Console & PSP releases",
+    "note": "The PSP version followed in 2006.",
+    "source": "https://en.wikipedia.org/wiki/From_Russia_with_Love_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "silverfin",
+    "title": "SilverFin",
+    "year": 2006,
+    "platforms": ["Mobile phones (Java ME)"],
+    "version": "Young Bond spin-off",
+    "note": "Based on Charlie Higson’s novel.",
+    "source": "https://jamesbond.fandom.com/wiki/SilverFin_(mobile_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "casino-mobile",
+    "title": "Casino Royale",
+    "year": 2006,
+    "platforms": ["Mobile phones (Java ME)"],
+    "version": "Mobile game",
+    "note": "",
+    "source": "https://www.gamespot.com/articles/a-brief-history-of-james-bond-video-games/1100-6503474/",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "trivia",
+    "title": "James Bond Trivia",
+    "year": 2006,
+    "platforms": ["Mobile phones (Java ME)"],
+    "version": "Mobile quiz",
+    "note": "",
+    "source": "https://www.gamespot.com/articles/a-brief-history-of-james-bond-video-games/1100-6503474/",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "quantum-hd",
+    "title": "007: Quantum of Solace",
+    "year": 2008,
+    "platforms": ["Windows", "PlayStation 3", "Xbox 360"],
+    "version": "PC, PS3 & Xbox 360 adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/Quantum_of_Solace_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "quantum-wii",
+    "title": "007: Quantum of Solace",
+    "year": 2008,
+    "platforms": ["Wii"],
+    "version": "Wii adaptation",
+    "note": "",
+    "source": "https://collected.games/catalog/series/james-bond/",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "quantum-ps2",
+    "title": "007: Quantum of Solace",
+    "year": 2008,
+    "platforms": ["PlayStation 2"],
+    "version": "PlayStation 2 adaptation",
+    "note": "Third-person adaptation by Eurocom.",
+    "source": "https://en.wikipedia.org/wiki/Quantum_of_Solace_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "quantum-ds",
+    "title": "007: Quantum of Solace",
+    "year": 2008,
+    "platforms": ["Nintendo DS"],
+    "version": "Nintendo DS adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/Quantum_of_Solace_(video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "quantum-mobile",
+    "title": "007: Quantum of Solace",
+    "year": 2008,
+    "platforms": ["Mobile phones (Java ME)"],
+    "version": "Mobile adaptation",
+    "note": "",
+    "source": "https://www.gamespot.com/articles/a-brief-history-of-james-bond-video-games/1100-6503474/",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "top-agent",
+    "title": "James Bond: Top Agent",
+    "year": 2008,
+    "platforms": ["Mobile phones (Java ME)", "iOS"],
+    "version": "Mobile game",
+    "note": "iOS version followed in 2009.",
+    "source": "https://jamesbondstudies.ac.uk/articles/111/files/660d372911c05.pdf",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "goldeneye-wii",
+    "title": "GoldenEye 007",
+    "year": 2010,
+    "platforms": ["Wii"],
+    "version": "Wii reimagining",
+    "note": "Daniel Craig replaces Pierce Brosnan in this reimagining.",
+    "source": "https://en.wikipedia.org/wiki/GoldenEye_007_(2010_video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "goldeneye-ds",
+    "title": "GoldenEye 007",
+    "year": 2010,
+    "platforms": ["Nintendo DS"],
+    "version": "Nintendo DS adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/GoldenEye_007_(2010_video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "bloodstone",
+    "title": "James Bond 007: Blood Stone",
+    "year": 2010,
+    "platforms": ["Windows", "PlayStation 3", "Xbox 360"],
+    "version": "PC & console adaptation",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007:_Blood_Stone",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "bloodstone-ds",
+    "title": "James Bond 007: Blood Stone",
+    "year": 2010,
+    "platforms": ["Nintendo DS"],
+    "version": "Nintendo DS adaptation",
+    "note": "A separate handheld adaptation.",
+    "source": "https://en.wikipedia.org/wiki/James_Bond_007:_Blood_Stone",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "license-drive",
+    "title": "007: License to Drive",
+    "year": 2011,
+    "platforms": ["Mobile phones (Java ME)"],
+    "version": "Mobile driving game",
+    "note": "",
+    "source": "https://www.gamespot.com/articles/a-brief-history-of-james-bond-video-games/1100-6503474/",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "top-trumps",
+    "title": "Top Trumps 007: The Best of Bond",
+    "year": 2011,
+    "platforms": ["Mobile phones (Java ME)", "iOS"],
+    "version": "Digital card game",
+    "note": "",
+    "source": "https://www.mi6-hq.com/sections/articles/collecting_top_trumps_vg",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "reloaded",
+    "title": "GoldenEye 007: Reloaded",
+    "year": 2011,
+    "platforms": ["PlayStation 3", "Xbox 360"],
+    "version": "HD edition",
+    "note": "An enhanced version of the 2010 Wii reimagining.",
+    "source": "https://en.wikipedia.org/wiki/GoldenEye_007_(2010_video_game)",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "legends",
+    "title": "007 Legends",
+    "year": 2012,
+    "platforms": ["Windows", "PlayStation 3", "Xbox 360", "Wii U"],
+    "version": "PC & console releases",
+    "note": "",
+    "source": "https://en.wikipedia.org/wiki/007_Legends",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "espionage",
+    "title": "James Bond: World of Espionage",
+    "year": 2015,
+    "platforms": ["iOS", "Android"],
+    "version": "Mobile strategy",
+    "note": "Discontinued; included as a historical release.",
+    "source": "https://www.gamespot.com/articles/a-brief-history-of-james-bond-video-games/1100-6503474/",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "goldeneye-reissue",
+    "title": "GoldenEye 007",
+    "year": 2023,
+    "platforms": ["Nintendo Switch", "Xbox One", "Xbox Series X|S"],
+    "version": "Modern reissue",
+    "note": "Nintendo Switch Online + Expansion Pack release and Xbox reissue of the 1997 game.",
+    "source": "https://news.xbox.com/en-us/2023/01/25/goldeneye-007-xbox-game-pass-release-date/",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "cypher",
+    "title": "Cypher 007",
+    "year": 2023,
+    "platforms": ["iOS", "iPadOS", "macOS", "tvOS"],
+    "version": "Apple Arcade",
+    "note": "Historical platform availability; store availability may change.",
+    "source": "https://apps.apple.com/us/app/cypher-007/id1586958842",
+    "upcomingPlatforms": []
+  },
+  {
+    "id": "first-light",
+    "title": "007 First Light",
+    "year": 2026,
+    "platforms": ["Windows", "PlayStation 5", "Xbox Series X|S"],
+    "version": "Current generation",
+    "note": "Nintendo Switch 2 release scheduled for 18 March 2027.",
+    "source": "https://ioi.dk/en-us/007firstlightgame/news/2026/007-first-light-switch-2-date-confirmed",
+    "upcomingPlatforms": [
+      {
+        "name": "Nintendo Switch 2",
+        "date": "2027-03-18"
+      }
+    ]
+  }
+]
